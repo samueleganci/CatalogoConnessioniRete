@@ -1,0 +1,4 @@
+Visual Studio 2015, 2017 and 2019. 32 bit and 64 bit.
+Apache Server 2.4.46 64 bit.
+Php 7.4.10 Thread Safe 64 bit.
+MySQL 8.0.21.0 32 bit installer.
