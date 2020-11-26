@@ -2,30 +2,31 @@ DROP DATABASE IF EXISTS gestionale;
 CREATE DATABASE gestionale;
 USE gestionale;
 CREATE TABLE switch  (
-	id INTEGER,
+	id INT AUTO_INCREMENT,
     posizione VARCHAR(25),
     modello VARCHAR(25),
-    numero_porte VARCHAR(25),
+	etichetta VARCHAR(25),
+    numero_porte INT,
     PRIMARY KEY(id)
 );
 
 CREATE TABLE dispositivo (
-	id INTEGER,
-    dispotivo VARCHAR(25),
+	id INT AUTO_INCREMENT,
+    dispositivo VARCHAR(25),
 	PRIMARY KEY(id)
 );
 
 CREATE TABLE cavo (
-	id INTEGER,
+	id INT AUTO_INCREMENT,
 	cavo VARCHAR(25),
 	PRIMARY KEY(id)
 );
 
 CREATE TABLE collegamento (
-    switch_id INTEGER,
-    numero_porta INTEGER,
-    cavo_id INTEGER,
-    dispositivo_id INTEGER,
+    switch_id INT,
+    numero_porta INT,
+    cavo_id INT,
+    dispositivo_id INT,
     PRIMARY KEY(switch_id, numero_porta),
     FOREIGN KEY (switch_id) REFERENCES switch(id),
     FOREIGN KEY (dispositivo_id) REFERENCES dispositivo(id),
@@ -33,7 +34,7 @@ CREATE TABLE collegamento (
 );
 
 CREATE TABLE ruolo (
-	id INTEGER,
+	id INT,
     ruolo VARCHAR(25),
     PRIMARY KEY(id)
 );
@@ -41,7 +42,7 @@ CREATE TABLE ruolo (
 CREATE TABLE utente (
 	nome VARCHAR(25),
     password_utente VARCHAR(64),
-    ruolo_id INTEGER,
+    ruolo_id INT,
     PRIMARY KEY(nome),
     FOREIGN KEY (ruolo_id) REFERENCES ruolo(id)
 );
