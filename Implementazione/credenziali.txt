@@ -1,0 +1,3 @@
+Amministratore => Password&1
+Operatore => Password&1
+Viewer => Password&1
